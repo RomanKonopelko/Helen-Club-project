@@ -1,0 +1,147 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+// Общие стили для двух секций со счетчиком //
+
+.problem {
+  padding-bottom: 340px;
+
+  background: #111518;
+
+  @include for-size(tablet-landscape) {
+    padding-bottom: 150px;
+  }
+
+  @include for-size(desktop) {
+    padding-top: 100px;
+    padding-bottom: 210px;
+
+    background-image: url('../images/icons/campfirebig.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  &-container {
+    position: relative;
+  }
+  &-wrap {
+    position: absolute;
+  }
+  &-title {
+    margin-bottom: 25px;
+
+    text-align: start;
+    color: white;
+
+    @include for-size(desktop) {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.problem-list {
+  padding-top: 20px;
+  padding-right: 14px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  letter-spacing: 0.08em;
+
+  color: $secondary-text-color;
+  background-color: #ffffff;
+  -webkit-box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+  box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+
+  counter-reset: section;
+
+  @include for-size(phone-only) {
+    &-items:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include for-size(tablet-landscape) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 96px;
+    padding-right: 96px;
+    padding-bottom: 26px;
+
+    &-items:nth-child(-n + 4) {
+      padding-bottom: 20px;
+    }
+    &-items {
+      width: calc((100% - 20px) / 2);
+    }
+  }
+  @include for-size(desktop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    padding-top: 70px;
+    padding-bottom: 62px;
+    padding-left: 114px;
+    padding-right: 114px;
+
+    &-items {
+      width: calc((100% - 32px) / 3);
+    }
+
+    &-items:nth-child(-n + 3) {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+// Разметка для линий и списка через счетчик //
+
+.problem-list-items {
+  position: relative;
+  padding-top: 10px;
+}
+
+.problem-list-items::before {
+  content: '';
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: block;
+  height: 10px;
+  width: 20px;
+  margin-bottom: 18px;
+
+  border-bottom: 2px solid $accent-color;
+
+  @include for-size(desktop) {
+    height: 12px;
+  }
+}
+
+.problem-list-items::after {
+  position: absolute;
+  top: 9px;
+  left: 27px;
+
+  color: $accent-color;
+  font-weight: 700;
+
+  content: '0' counter(section);
+  counter-increment: section;
+}

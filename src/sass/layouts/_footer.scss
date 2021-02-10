@@ -1,0 +1,223 @@
+.footer {
+  text-align: center;
+
+  @include for-size(tablet-landscape) {
+    text-align: start;
+  }
+}
+
+.footer-page {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include for-size(tablet-landscape) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include for-size(desktop) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+
+    padding-top: 52px;
+    padding-bottom: 53px;
+  }
+}
+
+.footer-logo-link {
+  display: block;
+
+  margin-bottom: 20px;
+
+  @include for-size(tablet-landscape) {
+    margin: 0;
+  }
+
+  @include for-size(desktop) {
+    margin-right: 290px;
+  }
+}
+
+.footer-logo {
+  max-width: 100%;
+  width: 84.12px;
+  height: 30px;
+
+  @include for-size(tablet-landscape) {
+    width: 128px;
+    height: 45px;
+  }
+}
+
+.footer-nav {
+  @include for-size(tablet-landscape) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.footer-tel {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+
+  margin-bottom: 30px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+
+  color: $title-text-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:hover .footer-icon-call,
+  &:focus .footer-icon-call {
+    fill: inherit;
+  }
+
+  -webkit-transition: color $transition-duration $timing-function;
+
+  -o-transition: color $transition-duration $timing-function;
+
+  transition: color $transition-duration $timing-function;
+
+  @include for-size(tablet-landscape) {
+    margin-bottom: 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @include for-size(desktop) {
+    font-size: 30px;
+    line-height: 1.23;
+  }
+}
+
+.footer-tel::after {
+  @include for-size(tablet-landscape) {
+    content: '';
+
+    margin-right: 24px;
+    margin-left: 24px;
+
+    height: 40px;
+
+    border-left: 1px solid $primary-text-color;
+
+    @include for-size(desktop) {
+      margin-right: 24px;
+      margin-left: 16px;
+    }
+  }
+}
+
+.footer-icon-call {
+  margin-right: 10px;
+
+  -webkit-box-pack: center;
+
+  -ms-flex-pack: center;
+
+  justify-content: center;
+  vertical-align: middle;
+
+  max-width: 100%;
+  width: 20px;
+  height: 20px;
+
+  fill: $accent-color;
+
+  -webkit-transition: fill $transition-duration $timing-function;
+
+  -o-transition: fill $transition-duration $timing-function;
+
+  transition: fill $transition-duration $timing-function;
+
+  @include for-size(tablet-landscape) {
+    width: 24px;
+    height: 23px;
+  }
+
+  @include for-size(desktop) {
+    margin-right: 15px;
+
+    width: 30px;
+    height: 28px;
+  }
+
+  -webkit-animation: footer-icon-call 0.9s ease-in-out infinite;
+
+  animation: footer-icon-call 0.9s ease-in-out infinite;
+}
+
+@-webkit-keyframes footer-icon-call {
+  45% {
+    -webkit-transform: rotate(-55deg);
+    transform: rotate(-55deg);
+  }
+}
+
+@keyframes footer-icon-call {
+  45% {
+    -webkit-transform: rotate(-55deg);
+    transform: rotate(-55deg);
+  }
+}
+
+.footer-instagram::after {
+  content: '';
+  display: inline-block;
+
+  max-width: 100%;
+  width: 40px;
+  height: 40px;
+
+  background-image: url('../images/icons/instagram.svg');
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// футер копирайт
+.footer-copyright {
+  background: $secondary-bg-color;
+
+  @include for-size(tablet-landscape) {
+    text-align: start;
+  }
+}
+
+.footer-copyright-text {
+  padding-top: 21px;
+  padding-bottom: 21px;
+
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: normal;
+}

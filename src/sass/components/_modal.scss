@@ -1,0 +1,223 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+
+  padding: 10px 10px;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  opacity: 1;
+  overflow-y: scroll;
+  -webkit-transition: opacity $timing-function $transition-duration;
+  -o-transition: opacity $timing-function $transition-duration;
+  transition: opacity $timing-function $transition-duration;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+  -ms-transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  background-color: #fff;
+
+  @include for-size(tablet-portrait) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    max-width: 450px;
+    width: 100%;
+
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @include for-size(desktop) {
+    min-width: 528px;
+    min-height: 450px;
+
+    -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.form-call-to-action {
+  display: block;
+  margin-bottom: 50px;
+
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $title-text-color;
+}
+
+.modal-form {
+  position: relative;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px;
+
+  color: $title-text-color;
+}
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+
+  color: $button-text-color;
+
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  -webkit-transition: color $transition-duration $timing-function,
+    background-color $transition-duration $timing-function;
+  -o-transition: color $transition-duration $timing-function,
+    background-color $transition-duration $timing-function;
+  transition: color $transition-duration $timing-function,
+    background-color $transition-duration $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $button-text-color;
+    box-shadow: 0 0 2pt 1pt $accent-color;
+    color: $accent-color;
+  }
+}
+
+.icon-close {
+  fill: currentColor;
+}
+
+.btn-close:hover .icon-close,
+.btn-close:focus .icon-close {
+  fill: $accent-color;
+}
+
+.btn-position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.modal-input {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 15px 28px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  -webkit-transition: border $transition-duration $timing-function;
+  -o-transition: border $transition-duration $timing-function;
+  transition: border $transition-duration $timing-function;
+
+  @include for-size(tablet-portrait) {
+    height: 48px;
+  }
+
+  @include for-size(desktop) {
+    width: 450px;
+    height: 70px;
+  }
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border: 1px solid $accent-color;
+  outline: none;
+}
+
+.modal-input:invalid {
+  color: red;
+}
+
+// Анимация
+.modal-field {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal-label {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  -webkit-transform: translateY(60%);
+  -ms-transform: translateY(60%);
+  transform: translateY(60%);
+
+  color: $primary-text-color;
+
+  -webkit-transition: -webkit-transform 250ms linear;
+  transition: -webkit-transform 250ms linear;
+  -o-transition: transform 250ms linear;
+  transition: transform 250ms linear;
+  transition: transform 250ms linear, -webkit-transform 250ms linear;
+
+  @include for-size(desktop) {
+    -webkit-transform: translateY(70%);
+    -ms-transform: translateY(70%);
+    transform: translateY(70%);
+  }
+}
+
+.modal-input:focus + .modal-label,
+.modal-input:not(:placeholder-shown) + .modal-label {
+  -webkit-transform: translate(-30px, -90%);
+  -ms-transform: translate(-30px, -90%);
+  transform: translate(-30px, -90%);
+  color: $accent-color;
+}
+
+.form-btn-thumb {
+  text-align: center;
+}
+
+.form-btn {
+  min-width: 200px;
+  padding: 15px 15px;
+}

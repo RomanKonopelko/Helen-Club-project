@@ -1,0 +1,54 @@
+<section class="section-first registration" id="form-section">
+  <div class="container">
+    <h2 class="registration-title">
+      <span class="br">
+        Регистрация на <span class="accent-color">бесплатную</span></span
+      >
+      <span class="br">
+        телефонную <span class="accent-color">консультацию</span> по
+        нюансам</span
+      >
+      ВНО по английскому языку
+    </h2>
+    <p class="registration-paragraph">
+      Оставь заявку на участие в
+      <span class="accent-color"> бесплатном занятии. </span> <br />
+      С вами свяжется консультант и ответит на вопросы
+    </p>
+    <form class="form">
+      <div class="form-field form-name">
+        <input
+          class="form-input"
+          id="name"
+          type="text"
+          name="name"
+          placeholder=" "
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄє' -]{2,50}"
+          title="Поле должно содержать только буквы латинского, русского или украинского алфавита, пробел, дефис или апостроф"
+          required
+        />
+        <label for="name" class="form-label">Имя*</label>
+      </div>
+
+      <div class="form-field form-tel">
+        <input
+          class="form-input"
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder=" "
+          pattern="[0-9]{10,12}"
+          title="Поле должно содержать только от 10 до 12 цифр"
+          required
+        />
+        <label for="phone" class="form-label tel-label">Телефон*</label>
+      </div>
+      <button type="submit" class="button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>хочу на бесплатное занятие
+      </button>
+    </form>
+  </div>
+</section>
