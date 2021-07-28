@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   //Preloader
   preloaderFadeOutTime = 3000;
